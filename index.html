@@ -2046,8 +2046,16 @@ window.addEventListener("load", function() {
                         }
                     }
 
-                    insertData(cssImg, img);
+                    // insertData(cssImg, img);
+                    var imgElement = document.querySelector(cssImg);
 
+                 if (imgElement) {
+                 imgElement.addEventListener("load", function() {
+                 imgElement.setAttribute("src", img);
+                  });
+
+    imgElement.setAttribute("src", img);
+}
                     var linkElement = document.querySelector(cssUrl);
                     if (linkElement) {
                         linkElement.setAttribute("href", url);
