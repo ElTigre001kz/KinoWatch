@@ -2012,7 +2012,6 @@ window.addEventListener("load", function() {
         });
     });
 </script> -->
-<script>
 (function() {
     // Заменяем обработчик события DOMContentLoaded
     window.addEventListener("load", function() {
@@ -2047,15 +2046,16 @@ window.addEventListener("load", function() {
                     }
 
                     insertData(cssImg, img);
-                    insertData(cssName, name);
-                    insertData(cssKP, rkp);
-                    insertData(cssImdb, rimdb);
-                    insertData(cssOpis, opis);
 
                     var linkElement = document.querySelector(cssUrl);
                     if (linkElement) {
                         linkElement.setAttribute("href", url);
                     }
+
+                    insertData(cssName, name);
+                    insertData(cssKP, rkp);
+                    insertData(cssImdb, rimdb);
+                    insertData(cssOpis, opis);
                 }
             }
         }
