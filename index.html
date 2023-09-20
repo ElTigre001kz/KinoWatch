@@ -5,11 +5,10 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <script defer>
-    (function() {
-        // Заменяем обработчик события DOMContentLoaded
-        window.addEventListener("load", function() {
-            // Ваш скрипт начинается здесь
-var jsonData = {
+window.addEventListener("load", function() {
+    setTimeout(function() {
+        // Ваш скрипт начинается здесь
+        var jsonData = {
     "data1": ["https://st.kinovod040523.cc/storage/360x534/posters/2018/2/qxTaVuhSqm.jpg", "Форсаж", "8 / ", "7", "гонки", "сыллка на фильм"],
     "data2": ["https://st.kinovod040523.cc/storage/360x534/posters/2018/2/qxTaVuhSqm.jpg", "Форсаж 2", "8 / ", "7", "гонки", "ссылка на фильм"],
     // Добавьте аналогичные строки для 20 элементов
@@ -61,8 +60,9 @@ var jsonData = {
             // Вызываем функцию для вставки данных с использованием XPath и цикла
             insertDataWithXPathAndLoop();
             // Ваш скрипт заканчивается здесь
-        });
-    })();
+    }, 1000); // Задержка в 1 секунду перед выполнением скрипта
+});
+
 </script>
 	<title>Топ Новинки</title>
 	
