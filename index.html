@@ -1609,31 +1609,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XDFFZQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <script defer>
-
 (function() {
     // Заменяем обработчик события DOMContentLoaded
     window.addEventListener("load", function() {
         // Ваш скрипт начинается здесь
+
         var jsonData = {
             "data1": ["https://st.kinovod040523.cc/storage/360x534/posters/2018/2/qxTaVuhSqm.jpg", "Форсаж", "8 / ", "7", "гонки", "ссылка на фильм"],
             "data2": ["https://st.kinovod040523.cc/storage/360x534/posters/2018/2/qxTaVuhSqm.jpg", "Форсаж 2", "8 / ", "7", "гонки", "ссылка на фильм"],
-            // Добавьте аналогичные строки для 20 элементов
+            // Добавьте аналогичные строки для 18 дополнительных элементов
+            // Например:
+            // "data3": ["URL3", "Название3", "Другие данные3", ...],
+            // ...
+            // "data20": ["URL20", "Название20", "Другие данные20", ...]
         };
-
-        function waitForElement(xpath, callback) {
-            var interval = setInterval(function() {
-                var element = document.evaluate(xpath, document, null, XPathResult.ANY_TYPE, null).iterateNext();
-                if (element) {
-                    clearInterval(interval);
-                    callback(element);
-                }
-            }, 100); // Проверка каждые 100 миллисекунд
-        }
 
         function insertDataWithXPathAndLoop() {
             // Ваш код вставки данных с использованием XPath и цикла здесь
 
-            for (var i = 1; i <= 2; i++) {
+            for (var i = 1; i <= 20; i++) {
                 var xpathImg = "/html/body/div[5]/div/div[" + i + "]/div[1]/img";
                 var xpathName = "/html/body/div[5]/div/div[" + i + "]/div[2]/div/p/span/strong";
                 var xpathKP = "/html/body/div[5]/div/div[" + i + "]/div[3]/div/p/span/text()[1]";
@@ -1654,14 +1648,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         }
                     }
 
-                    waitForElement(xpathImg, function(imgElement) {
-                        imgElement.setAttribute("src", img);
-                    });
-
                     insertData(xpathName, name);
                     insertData(xpathKP, rkp);
                     insertData(xpathImdb, rimdb);
                     insertData(xpathOpis, opis);
+
+                    var imgElement = document.evaluate(xpathImg, document, null, XPathResult.ANY_TYPE, null).iterateNext();
+                    if (imgElement) {
+                        imgElement.setAttribute("src", img);
+                    }
 
                     var linkElement = document.evaluate(xpathUrl, document, null, XPathResult.ANY_TYPE, null).iterateNext();
                     if (linkElement) {
@@ -1671,12 +1666,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         }
 
-        // Вызываем функцию для вставки данных с использованием XPath и цикла
-        insertDataWithXPathAndLoop();
-        // Ваш скрипт заканчивается здесь
+        // Создаем MutationObserver для отслеживания появления элемента img
+        var observer = new MutationObserver(function(mutationsList, observer) {
+            for (var mutation of mutationsList) {
+                if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                    // Проверяем, добавлен ли элемент img
+                    if (mutation.addedNodes[0].nodeName === 'IMG') {
+                        // Вызываем функцию для вставки данных после появления элемента
+                        insertDataWithXPathAndLoop();
+                        // Отключаем наблюдение после выполнения
+                        observer.disconnect();
+                        break;
+                    }
+                }
+            }
+        });
+
+        // Начинаем отслеживание изменений внутри /html/body/div[5]/div/div[1]/div[1]
+        var targetNode = document.querySelector("/html/body/div[5]/div/div[1]/div[1]");
+        observer.observe(targetNode, { childList: true });
     });
 })();
-
 </script>
 
 
