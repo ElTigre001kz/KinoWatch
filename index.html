@@ -1677,63 +1677,63 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
 </script>	
 	
-	<script defer>
+	<script defer="">
 window.addEventListener("load", function() {
     setTimeout(function() {
         // Ваш скрипт начинается здесь
         var jsonData = {
-    "data1": ["https://st.kinovod040523.cc/storage/360x534/posters/2018/2/qxTaVuhSqm.jpg", "Форсаж", "8 / ", "7", "гонки", "сыллка на фильм"],
-    "data2": ["https://st.kinovod040523.cc/storage/360x534/posters/2023/08/8616ae13bfe73750fbbb.jpg", "Форсаж 2", "8 / ", "7", "гонки", "ссылка на фильм"],
-    // Добавьте аналогичные строки для 20 элементов
-};
+            "data1": ["https://st.kinovod040523.cc/storage/360x534/posters/2018/2/qxTaVuhSqm.jpg", "Форсаж", "8 / ", "7", "гонки", "сыллка на фильм"],
+            "data2": ["https://st.kinovod040523.cc/storage/360x534/posters/2018/2/qxTaVuhSqm.jpg", "Форсаж 2", "8 / ", "7", "гонки", "ссылка на фильм"],
+            // Добавьте аналогичные строки для 20 элементов
+        };
 
 
-            function insertDataWithXPathAndLoop() {
-                // Ваш код вставки данных с использованием XPath и цикла здесь
+        function insertDataWithXPathAndLoop() {
+            // Ваш код вставки данных с использованием XPath и цикла здесь
 
-                for (var i = 1; i <= 2; i++) {
-                    var xpathImg = "/html/body/div[5]/div/div[" + i + "]/div[1]/img";
-                    var xpathName = "/html/body/div[5]/div/div[" + i + "]/div[2]/div/p/span/strong";
-                    var xpathKP = "/html/body/div[5]/div/div[" + i + "]/div[3]/div/p/span/text()[1]";
-                    var xpathImdb = "/html/body/div[5]/div/div[" + i + "]/div[3]/div/p/span/text()[2]";
-                    var xpathOpis = "/html/body/div[5]/div/div[" + i + "]/div[4]/nav/ul/li";
-                    var xpathUrl = "/html/body/div[5]/div/div[" + i + "]/div[5]/a";
-                    var dataKey = "data" + i;
-                    var data = jsonData[dataKey];
+            for (var i = 1; i <= 2; i++) {
+                var xpathImg = "/html/body/div[5]/div/div[" + i + "]/div[1]/img";
+                var xpathName = "/html/body/div[5]/div/div[" + i + "]/div[2]/div/p/span/strong";
+                var xpathKP = "/html/body/div[5]/div/div[" + i + "]/div[3]/div/p/span/text()[1]";
+                var xpathImdb = "/html/body/div[5]/div/div[" + i + "]/div[3]/div/p/span/text()[2]";
+                var xpathOpis = "/html/body/div[5]/div/div[" + i + "]/div[4]/nav/ul/li";
+                var xpathUrl = "/html/body/div[5]/div/div[" + i + "]/div[5]/a";
+                var dataKey = "data" + i;
+                var data = jsonData[dataKey];
 
-                    if (data) {
-                        var [img, name, rkp, rimdb, opis, url] = data;
+                if (data) {
+                    var [img, name, rkp, rimdb, opis, url] = data;
 
-                        function insertData(xpath, data) {
-                            var result = document.evaluate(xpath, document, null, XPathResult.ANY_TYPE, null);
-                            var element = result.iterateNext();
-                            if (element) {
-                                element.textContent = data;
-                            }
+                    function insertData(xpath, data) {
+                        var result = document.evaluate(xpath, document, null, XPathResult.ANY_TYPE, null);
+                        var element = result.iterateNext();
+                        if (element) {
+                            element.textContent = data;
                         }
+                    }
 
-                        insertData(xpathName, name);
-                        insertData(xpathKP, rkp);
-                        insertData(xpathImdb, rimdb);
-                        insertData(xpathOpis, opis);
+                    insertData(xpathName, name);
+                    insertData(xpathKP, rkp);
+                    insertData(xpathImdb, rimdb);
+                    insertData(xpathOpis, opis);
 
-                        var imgElement = document.evaluate(xpathImg, document, null, XPathResult.ANY_TYPE, null).iterateNext();
-                        if (imgElement) {
-                            imgElement.setAttribute("src", img);
-                        }
+                    var imgElement = document.evaluate(xpathImg, document, null, XPathResult.ANY_TYPE, null).iterateNext();
+                    if (imgElement) {
+                        imgElement.setAttribute("src", img);
+                    }
 
-                        var linkElement = document.evaluate(xpathUrl, document, null, XPathResult.ANY_TYPE, null).iterateNext();
-                        if (linkElement) {
-                            linkElement.setAttribute("href", url);
-                        }
+                    var linkElement = document.evaluate(xpathUrl, document, null, XPathResult.ANY_TYPE, null).iterateNext();
+                    if (linkElement) {
+                        linkElement.setAttribute("href", url);
                     }
                 }
             }
+        }
 
-            // Вызываем функцию для вставки данных с использованием XPath и цикла
-            insertDataWithXPathAndLoop();
-            // Ваш скрипт заканчивается здесь
-    }, 1000); // Задержка в 1 секунду перед выполнением скрипта
+        // Вызываем функцию для вставки данных с использованием XPath и цикла
+        insertDataWithXPathAndLoop();
+        // Ваш скрипт заканчивается здесь
+    }, 5000); // Задержка в 5 секунд перед выполнением скрипта
 });
 
 </script>
