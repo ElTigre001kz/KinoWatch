@@ -28,7 +28,7 @@
         function insertDataWithCSSSelectorsAndLoop() {
             // Ваш код вставки данных с использованием CSS селекторов и цикла здесь
 
-            for (var i = 1; i <= 9; i++) {
+            for (var i = 1; i <= 12; i++) {
 	 // Ваш код для выполнения, если номер цикла меньше или равен 3
                 var cssImg = "#img-" + i + "";
                 var cssName = "#name-" + i + "";
