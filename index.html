@@ -1620,17 +1620,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         var jsonData = {
             "data1": ["https://st.kinovod040523.cc/storage/360x534/posters/2018/2/qxTaVuhSqm.jpg", "Форсаж", "8 / ", "7", "гонки", "ссылка на фильм"],
             "data2": ["https://st.kinovod040523.cc/storage/360x534/posters/2023/08/2e1ad4d07b6c413eee28.jpg", "Форсаж 2", "6 / ", "5", "гонки2", "ссылка на фильм"],
-            "data3": ["https://st.kinovod040523.cc/storage/360x534/posters/2020/05/d591c426df9567fc4cf9.jpg", "Форсаж 3", "6 / ", "5", "гонки2", "ссылка на фильм"],
+            "data3": ["https://st.kinovod040523.cc/storage/360x534/posters/2020/05/d591c426df9567fc4cf9.jpg", "Форсаж 3", "6 / ", "5", "гонки3", "ссылка на фильм"],
+		"data4": ["https://st.kinovod040523.cc/storage/360x534/posters/2023/09/6f3f90dfb44101da1afc.jpg", "Великий уравнитель 3", "1 / ", "2", "гонки4", "ссылка на фильм"],
+		"data5": ["https://st.kinovod040523.cc/storage/360x534/posters/2023/09/22419cf8ca15f8c033ff.jpg", "Неудержимые 4", "6 / ", "5", "гонки5", "ссылка на фильм"],
+		"data6": ["https://st.kinovod040523.cc/storage/360x534/posters/2023/09/9e2d589c3152427a2a3a.jpg", "Бугимен", "6 / ", "5", "гонки6", "ссылка на фильм"],
             // Добавьте аналогичные строки для 20 элементов
         };
 
         function insertDataWithCSSSelectorsAndLoop() {
             // Ваш код вставки данных с использованием CSS селекторов и цикла здесь
-
+            var number = 1
             for (var i = 1; i <= 3; i++) {
+		    
               if (i <= 3) {
-        // Ваш код для выполнения, если номер цикла меньше или равен 3
-                var cssImg = "body > div:nth-child(4) > div > div:nth-child(" + i + ") > div:nth-child(1) > img";
+	 // Ваш код для выполнения, если номер цикла меньше или равен 3
+                var cssImg = "body > div:nth-child(4) > div > div:nth-child(" + number + ") > div:nth-child(1) > img";
                 var cssName = "div:nth-child(" + i + ") div:nth-child(2) p span strong";
                 var cssKP = "div:nth-child(" + i + ") div:nth-child(3) p span:nth-child(1)";
                 var cssImdb = "div:nth-child(" + i + ") div:nth-child(3) p span:nth-child(2)";
@@ -1669,13 +1673,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     insertData(cssImdb, rimdb);
                     insertData(cssOpis, opis);
         console.log("Цикл выполняется для номера " + i);
+			number += 1;
     }
                 
+if (i > 3 && i <= 6) {
+	if (number == 3) {number = 1}
+                        // Ваш код, если номер цикла больше 3 и меньше или равен 6
+	var cssImg = "body > div:nth-child(6) > div > div:nth-child(" + number + ") > div:nth-child(1) > img";
+                var cssName = "div:nth-child(" + i + ") div:nth-child(2) p span strong";
+                var cssKP = "div:nth-child(" + i + ") div:nth-child(3) p span:nth-child(1)";
+                var cssImdb = "div:nth-child(" + i + ") div:nth-child(3) p span:nth-child(2)";
+                var cssOpis = "div:nth-child(" + i + ") div:nth-child(4) nav ul li";
+                var cssUrl = "div:nth-child(" + i + ") div:nth-child(5) a";
+                var dataKey = "data" + i;
+                var data = jsonData[dataKey];
 
-                    // Добавляем условия для номера цикла
-                    if (i <= 3) {
-                        // Ваш код, если номер цикла меньше или равен 3
-                    } else if (i > 3 && i <= 6) {
+                if (data) {
+                    var [img, name, rkp, rimdb, opis, url] = data;
+
+                    function insertData(selector, data) {
+                        var element = document.querySelector(selector);
+                        if (element) {
+                            element.textContent = data;
+                        }
+                    }
+
+                    var imgElement = document.querySelector(cssImg);
+
+                    if (imgElement) {
+                        imgElement.addEventListener("load", function() {
+                            imgElement.setAttribute("src", img);
+                        });
+
+                        imgElement.setAttribute("src", img);
+                    }
+
+                    var linkElement = document.querySelector(cssUrl);
+                    if (linkElement) {
+                        linkElement.setAttribute("href", url);
+                    }
+
+                    insertData(cssName, name);
+                    insertData(cssKP, rkp);
+                    insertData(cssImdb, rimdb);
+                    insertData(cssOpis, opis);
+        console.log("Цикл выполняется для номера " + i);
+			number += 1;
+                    }
+                    if (i > 3 && i <= 6) {
                         // Ваш код, если номер цикла больше 3 и меньше или равен 6
                     } else if (i > 6 && i <= 9) {
                         // Ваш код, если номер цикла больше 6 и меньше или равен 9
