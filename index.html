@@ -1631,10 +1631,9 @@ var number = 1
 
         function insertDataWithCSSSelectorsAndLoop() {
             // Ваш код вставки данных с использованием CSS селекторов и цикла здесь
-            
-            for (var i = 1; i <= 3; i++) {
-		    
-              if (i <= 3) {
+
+            for (var i = 1; i <= 2; i++) {
+                if (i <= 3) {
 	 // Ваш код для выполнения, если номер цикла меньше или равен 3
                 var cssImg = "body > div:nth-child(4) > div > div:nth-child(" + number + ") > div:nth-child(1) > img";
                 var cssName = "div:nth-child(" + i + ") div:nth-child(2) p span strong";
@@ -1681,53 +1680,7 @@ var number = 1
                 
 
             }
-		    if (i > 3 && i <= 6) {
-	if (number == 3) {number = 1}
-                        // Ваш код, если номер цикла больше 3 и меньше или равен 6
-	var cssImg = "body > div:nth-child(6) > div > div:nth-child(" + number + ") > div:nth-child(1) > img";
-                var cssName = "div:nth-child(" + i + ") div:nth-child(2) p span strong";
-                var cssKP = "div:nth-child(" + i + ") div:nth-child(3) p span:nth-child(1)";
-                var cssImdb = "div:nth-child(" + i + ") div:nth-child(3) p span:nth-child(2)";
-                var cssOpis = "div:nth-child(" + i + ") div:nth-child(4) nav ul li";
-                var cssUrl = "div:nth-child(" + i + ") div:nth-child(5) a";
-                var dataKey = "data" + i;
-                var data = jsonData[dataKey];
-
-                if (data) {
-                    var [img, name, rkp, rimdb, opis, url] = data;
-
-                    function insertData(selector, data) {
-                        var element = document.querySelector(selector);
-                        if (element) {
-                            element.textContent = data;
-                        }
-                    }
-
-                    var imgElement = document.querySelector(cssImg);
-
-                    if (imgElement) {
-                        imgElement.addEventListener("load", function() {
-                            imgElement.setAttribute("src", img);
-                        });
-
-                        imgElement.setAttribute("src", img);
-                    }
-
-                    var linkElement = document.querySelector(cssUrl);
-                    if (linkElement) {
-                        linkElement.setAttribute("href", url);
-                    }
-
-                    insertData(cssName, name);
-                    insertData(cssKP, rkp);
-                    insertData(cssImdb, rimdb);
-                    insertData(cssOpis, opis);
-        console.log("Цикл выполняется для номера " + i);
-			console.log("Переменная" + number);
-			number += 1;
-                    }
-                    
-                }
+            }
         }
 
         // Вызываем функцию для вставки данных с использованием CSS селекторов и цикла
