@@ -87,7 +87,7 @@
         .then(data => {
           var jsonData = JSON.stringify(data, null, 2);
           // document.getElementById('data').textContent = jsonData;
-	 console.error('Данные получены:', jsonData);
+	 console.log('Данные получены:', jsonData);
         })
         .catch(error => {
           console.error('Ошибка загрузки данных:', error);
