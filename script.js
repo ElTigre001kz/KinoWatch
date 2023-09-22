@@ -1,3 +1,4 @@
+var jsonData
 (function() {
     // Заменяем обработчик события DOMContentLoaded
     window.addEventListener("load", function() {
