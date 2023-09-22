@@ -1,6 +1,8 @@
 (function () {
     function insertDataWithCSSSelectorsAndLoop(jsonData) {
         console.log("Функция запустилась");
+        console.log(data);
+        console.log(jsonData);
         for (var i = 1; i <= 20; i++) {
             var cssImg = "#img-" + i + "";
             var cssName = "#name-" + i + "";
