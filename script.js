@@ -1,8 +1,7 @@
-var jsonData
-(function() {
-    // Заменяем обработчик события DOMContentLoaded
-    window.addEventListener("load", function() {
-	    loadGoogleScriptData();
+// var jsonData
+// (function() {
+//     // Заменяем обработчик события DOMContentLoaded
+//     window.addEventListener("load", function() {
         // Ваш скрипт начинается здесь
   //       var jsonData = {
   //         "data1": ["https://st.kp.yandex.net/images/film_big/4664634.jpg", "Оппенгеймер (2023/BDRip)", " 8.5 / ", " 8.6", "История жизни американского физика Роберта Оппенгеймера, который стоял во главе первых разработок ядерного оружия.", "https://eltigre001kz.github.io/player.html?video=//8770197.svetacdn.in/VMbxNZKU6nyu/movie/67676&name=%D0%9E%D0%BF%D0%BF%D0%B5%D0%BD%D0%B3%D0%B5%D0%B9%D0%BC%D0%B5%D1%80&year=2023"],
@@ -75,13 +74,15 @@ var jsonData
  }
  }
  // Вызываем функцию для вставки данных с использованием CSS селекторов и цикла
-	    loadGoogleScriptData();
-        insertDataWithCSSSelectorsAndLoop(jsonData);
+	    // loadGoogleScriptData();
+        // insertDataWithCSSSelectorsAndLoop(jsonData);
         // Ваш скрипт заканчивается здесь
-    });
-})();
+    // });
+// })();
 
-
+(function() {
+    // Заменяем обработчик события DOMContentLoaded
+    window.addEventListener("load", function() {
     // Функция для загрузки данных из Google Apps Script
     function loadGoogleScriptData() {
       var url = 'https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec'; // Замените на URL вашего сервиса скриптов
@@ -91,6 +92,7 @@ var jsonData
           var jsonData = JSON.stringify(data, null, 2);
           // document.getElementById('data').textContent = jsonData;
 	 console.log("Данные получены: " + jsonData);
+		insertDataWithCSSSelectorsAndLoop(jsonData);
         })
         .catch(error => {
           console.error("Ошибка загрузки данных: " + error);
@@ -99,7 +101,9 @@ var jsonData
 
      // Вызываем функцию при загрузке страницы
     // window.onload = loadGoogleScriptData;
-
+	    loadGoogleScriptData;
+	    
+})();
 
 
 // Пример использования
