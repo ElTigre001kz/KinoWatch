@@ -1,5 +1,5 @@
 (function () {
-    function insertDataWithCSSSelectorsAndLoop(jsonData) {
+    function insertDataWithCSSSelectorsAndLoop(data) {
         console.log("Функция запустилась");
         console.log(data);
         console.log(jsonData);
@@ -57,7 +57,7 @@
                     console.log("Данные получены: " + jsonData);
 
                     // Вызываем функцию insertDataWithCSSSelectorsAndLoop с данными jsonData
-                    insertDataWithCSSSelectorsAndLoop(jsonData);
+                    insertDataWithCSSSelectorsAndLoop(data);
                 })
                 .catch(error => {
                     console.error("Ошибка загрузки данных: " + error);
