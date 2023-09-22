@@ -97,33 +97,26 @@
   //   // Вызываем функцию при загрузке страницы
   //   window.onload = loadGoogleScriptData;
 
-function getDataFromGoogleScript() {
-  var scriptUrl = "https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec?contentType=application/json&accessControlAllowOrigin=*";
-  
-  // Формируем URL для GET-запроса с данными
-  var data = { /* ваш объект данных */ };
-  var queryParams = Object.keys(data).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
-  var getUrl = scriptUrl + "?" + queryParams;
+const url = 'https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec';
 
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", getUrl, true);
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4) {
-      if (xhr.status == 200) {
-        // Обработка успешного ответа от сервера
-        var response = xhr.responseText;
-        // Далее обрабатывайте ответ по вашим нуждам
-        console.log(response);
-      } else {
-        // Обработка ошибки
-        console.error("Произошла ошибка при получении данных:", xhr.status, xhr.statusText);
-      }
+// Отправьте GET-запрос к указанному URL с помощью fetch
+fetch(url)
+  .then(response => {
+    // Проверьте, успешен ли запрос
+    if (response.ok) {
+      // Преобразуйте ответ в текст
+      return response.text();
+    } else {
+      throw new Error(`Ошибка ${response.status}: Не удалось получить страницу`);
     }
-  };
-
-  xhr.send();
-}
+  })
+  .then(data => {
+    // Выведите данные HTML-страницы
+    console.log(data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
 
 // Пример использования
 window.onload = getDataFromGoogleScript();
