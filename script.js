@@ -1,8 +1,6 @@
 // var jsonData
 (function() {
-//     // Заменяем обработчик события DOMContentLoaded
     window.addEventListener("load", function() {
-        // Ваш скрипт начинается здесь
         var jsonData = {
           "data1": ["https://st.kp.yandex.net/images/film_big/4664634.jpg", "Оппенгеймер (2023/BDRip)", " 8.5 / ", " 8.6", "История жизни американского физика Роберта Оппенгеймера, который стоял во главе первых разработок ядерного оружия.", "https://eltigre001kz.github.io/player.html?video=//8770197.svetacdn.in/VMbxNZKU6nyu/movie/67676&name=%D0%9E%D0%BF%D0%BF%D0%B5%D0%BD%D0%B3%D0%B5%D0%B9%D0%BC%D0%B5%D1%80&year=2023"],
           "data2": ["https://st.kp.yandex.net/images/film_big/1219177.jpg", "Человек-паук Паутина вселенных (2023/BDRip)", " 8.5 / ", " 8.7", "После воссоединения с Гвен Стейси дружелюбный сосед Человек-Паук попадает из Бруклина в Мультивселенную, где встречает команду Паучков, защищающих само её существование. Пытаясь справиться с новой угрозой, Майлз сталкивается с Пауками из других вселенных. Настаёт момент, когда ему необходимо решить, что значит быть героем, спасающим тех, кого любишь больше всего.", "https://eltigre001kz.github.io/player.html?video=//5075551.svetacdn.in/VMbxNZKU6nyu/movie/66529&name=%D0%A7%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA-%D0%BF%D0%B0%D1%83%D0%BA:%20%D0%9F%D0%B0%D1%83%D1%82%D0%B8%D0%BD%D0%B0%20%D0%B2%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D1%85&year=2023"],
@@ -27,10 +25,8 @@
         };
 
         function insertDataWithCSSSelectorsAndLoop() {
-            // Ваш код вставки данных с использованием CSS селекторов и цикла здесь
 
             for (var i = 1; i <= 20; i++) {
-	 // Ваш код для выполнения, если номер цикла меньше или равен 3
                 var cssImg = "#img-" + i + "";
                 var cssName = "#name-" + i + "";
                 var cssKP = "#kp-rating-" + i + "";
@@ -73,10 +69,7 @@
     }
  }
  }
- // Вызываем функцию для вставки данных с использованием CSS селекторов и цикла
-	    // loadGoogleScriptData();
         insertDataWithCSSSelectorsAndLoop();
-        // Ваш скрипт заканчивается здесь
     });
 })();
 
