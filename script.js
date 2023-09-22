@@ -126,5 +126,5 @@ function getDataFromGoogleScript() {
 }
 
 // Пример использования
-window.onload = getDataFromGoogleScript();
+window.onload = getDataFromGoogleScript;
 
