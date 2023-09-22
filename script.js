@@ -83,7 +83,6 @@
     function loadGoogleScriptData() {
       var url = 'https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec'; // Замените на URL вашего сервиса скриптов
       fetch(url)
-	      mode: 'no-cors'
         .then(response => response.json())
         .then(data => {
           var jsonData = JSON.stringify(data, null, 2);
