@@ -15,6 +15,7 @@
             var cssUrl = "#url-" + i + "";
             var dataKey = "data" + i;
             var data = jsonData[dataKey];
+             console.log(jsonData);
 
             if (data) {
                 console.log("залетел в иф дата");
@@ -31,6 +32,7 @@
                 var imgElement = document.querySelector(cssImg);
 
                 if (imgElement) {
+                    console.log("если постер");
                     imgElement.addEventListener("load", function () {
                         imgElement.setAttribute("src", img);
                     });
@@ -40,9 +42,10 @@
 
                 var linkElement = document.querySelector(cssUrl);
                 if (linkElement) {
+                    console.log("если ссылка");
                     linkElement.setAttribute("href", url);
                 }
-
+console.log("после ссылки");
                 insertData(cssName, name);
                 insertData(cssKP, rkp);
                 insertData(cssImdb, rimdb);
