@@ -93,7 +93,7 @@
 
      // Вызываем функцию при загрузке страницы
     // window.onload = loadGoogleScriptData;
-        loadGoogleScriptData;
+        loadGoogleScriptData();
     });
 })();
 
