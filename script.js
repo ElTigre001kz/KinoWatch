@@ -74,28 +74,28 @@
 })();
 
 
-(function() {
-    window.addEventListener("load", function() {
-        function loadGoogleScriptData() {
-      var url = 'https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec'; // Замените на URL вашего сервиса скриптов
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          var jsonData = JSON.stringify(data, null, 2);
-          // document.getElementById('data').textContent = jsonData;
-	 console.log("Данные получены: " + jsonData);
-		// insertDataWithCSSSelectorsAndLoop(jsonData);
-        })
-        .catch(error => {
-          console.error("Ошибка загрузки данных: " + error);
-        });
-    }
+// (function() {
+//     window.addEventListener("load", function() {
+//         function loadGoogleScriptData() {
+//       var url = 'https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec'; // Замените на URL вашего сервиса скриптов
+//       fetch(url)
+//         .then(response => response.json())
+//         .then(data => {
+//           var jsonData = JSON.stringify(data, null, 2);
+//           // document.getElementById('data').textContent = jsonData;
+// 	 console.log("Данные получены: " + jsonData);
+// 		// insertDataWithCSSSelectorsAndLoop(jsonData);
+//         })
+//         .catch(error => {
+//           console.error("Ошибка загрузки данных: " + error);
+//         });
+//     }
 
      // Вызываем функцию при загрузке страницы
     // window.onload = loadGoogleScriptData;
-        loadGoogleScriptData();
-    });
-})();
+//         loadGoogleScriptData();
+//     });
+// })();
 
 
 
