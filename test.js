@@ -1,7 +1,8 @@
 (function () {
     function insertDataWithCSSSelectorsAndLoop(jsonData) {
         console.log("Функция запустилась");
-        console.log(data);
+        
+        jsonData = jsonData.replace(/\\/g, '');
         console.log(jsonData);
         for (var i = 1; i <= 20; i++) {
             console.log("начался цикл");
