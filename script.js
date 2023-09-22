@@ -91,7 +91,7 @@
 	 console.log("Данные получены: " + jsonData);
         })
         .catch(error => {
-          console.error('Ошибка загрузки данных:', error);
+          console.error("Ошибка загрузки данных: " + error);
         });
     }
 
