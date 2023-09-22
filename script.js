@@ -98,7 +98,7 @@
   //   window.onload = loadGoogleScriptData;
 
 function getDataFromGoogleScript() {
-  var scriptUrl = "https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec";
+  var scriptUrl = "https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec?contentType=application/json&accessControlAllowOrigin=*";
   
   // Формируем URL для GET-запроса с данными
   var data = { /* ваш объект данных */ };
@@ -126,5 +126,5 @@ function getDataFromGoogleScript() {
 }
 
 // Пример использования
-window.onload = getDataFromGoogleScript;
+window.onload = getDataFromGoogleScript();
 
