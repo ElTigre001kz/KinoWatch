@@ -3,6 +3,7 @@
         console.log("Функция запустилась");
         
         jsonData = jsonData.replace(/\\/g, '');
+        var jsonData = jsonData.trim().replace(/^"|"$/g, '');
         console.log(jsonData);
         for (var i = 1; i <= 20; i++) {
             console.log("начался цикл");
