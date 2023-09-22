@@ -5,7 +5,7 @@
         jsonData = jsonData.replace(/\\/g, '');
         var jsonData = jsonData.trim().replace(/^"|"$/g, '');
         jsonData = JSON.parse(jsonData);
-        console.log(jsonData);
+        // console.log(jsonData);
         for (var i = 1; i <= 20; i++) {
             console.log("начался цикл");
             var cssImg = "#img-" + i + "";
@@ -19,7 +19,7 @@
              console.log(jsonData);
 
             if (data) {
-                console.log("залетел в иф дата");
+                // console.log("залетел в иф дата");
                 var [img, name, rkp, rimdb, opis, url] = data;
                 // var [id_kp, name, rkp, rimdb, opis, url] = data;
 
@@ -33,7 +33,7 @@
                 var imgElement = document.querySelector(cssImg);
 
                 if (imgElement) {
-                    console.log("если постер");
+                    // console.log("если постер");
                     imgElement.addEventListener("load", function () {
                         imgElement.setAttribute("src", img);
                     });
@@ -43,15 +43,15 @@
 
                 var linkElement = document.querySelector(cssUrl);
                 if (linkElement) {
-                    console.log("если ссылка");
+                    // console.log("если ссылка");
                     linkElement.setAttribute("href", url);
                 }
-console.log("после ссылки");
+// console.log("после ссылки");
                 insertData(cssName, name);
                 insertData(cssKP, rkp);
                 insertData(cssImdb, rimdb);
                 insertData(cssOpis, opis);
-                console.log("Цикл выполняется для номера " + i);
+                // console.log("Цикл выполняется для номера " + i);
             }
         }
     }
@@ -63,7 +63,7 @@ console.log("после ссылки");
                 .then(response => response.json())
                 .then(data => {
                     var jsonData = JSON.stringify(data, null, 2);
-                    console.log("Данные получены: " + jsonData);
+                    // console.log("Данные получены: " + jsonData);
 
                     // Вызываем функцию insertDataWithCSSSelectorsAndLoop с данными jsonData
                     insertDataWithCSSSelectorsAndLoop(jsonData);
