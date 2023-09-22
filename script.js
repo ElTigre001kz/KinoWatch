@@ -98,7 +98,7 @@
   //   window.onload = loadGoogleScriptData;
 
 function getDataFromGoogleScript() {
-  var scriptUrl = "https://script.google.com/macros/s/AKfycbx3Sgmg7jsOvSxT_vDGk77dxJr9Wmoi4NhjQN5CAgFPf-she4h8vJfWt5kDJEOu718o/exec";
+  var scriptUrl = "https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec";
   
   // Формируем URL для GET-запроса с данными
   var data = { /* ваш объект данных */ };
