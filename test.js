@@ -1,9 +1,10 @@
 (function () {
-    function insertDataWithCSSSelectorsAndLoop(data) {
+    function insertDataWithCSSSelectorsAndLoop(jsonData) {
         console.log("Функция запустилась");
         console.log(data);
         console.log(jsonData);
         for (var i = 1; i <= 20; i++) {
+            console.log("начался цикл");
             var cssImg = "#img-" + i + "";
             var cssName = "#name-" + i + "";
             var cssKP = "#kp-rating-" + i + "";
@@ -14,7 +15,9 @@
             var data = jsonData[dataKey];
 
             if (data) {
+                console.log("залетел в иф дата");
                 var [img, name, rkp, rimdb, opis, url] = data;
+                // var [id_kp, name, rkp, rimdb, opis, url] = data;
 
                 function insertData(selector, data) {
                     var element = document.querySelector(selector);
@@ -57,7 +60,7 @@
                     console.log("Данные получены: " + jsonData);
 
                     // Вызываем функцию insertDataWithCSSSelectorsAndLoop с данными jsonData
-                    insertDataWithCSSSelectorsAndLoop(data);
+                    insertDataWithCSSSelectorsAndLoop(jsonData);
                 })
                 .catch(error => {
                     console.error("Ошибка загрузки данных: " + error);
