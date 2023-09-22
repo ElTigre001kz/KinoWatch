@@ -2,6 +2,7 @@ var jsonData
 (function() {
     // Заменяем обработчик события DOMContentLoaded
     window.addEventListener("load", function() {
+	    loadGoogleScriptData();
         // Ваш скрипт начинается здесь
   //       var jsonData = {
   //         "data1": ["https://st.kp.yandex.net/images/film_big/4664634.jpg", "Оппенгеймер (2023/BDRip)", " 8.5 / ", " 8.6", "История жизни американского физика Роберта Оппенгеймера, который стоял во главе первых разработок ядерного оружия.", "https://eltigre001kz.github.io/player.html?video=//8770197.svetacdn.in/VMbxNZKU6nyu/movie/67676&name=%D0%9E%D0%BF%D0%BF%D0%B5%D0%BD%D0%B3%D0%B5%D0%B9%D0%BC%D0%B5%D1%80&year=2023"],
