@@ -73,8 +73,8 @@
  }
  }
  // Вызываем функцию для вставки данных с использованием CSS селекторов и цикла
-        insertDataWithCSSSelectorsAndLoop(jsonData);
 	    loadGoogleScriptData();
+        insertDataWithCSSSelectorsAndLoop(jsonData);
         // Ваш скрипт заканчивается здесь
     });
 })();
