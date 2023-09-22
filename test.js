@@ -7,7 +7,7 @@
         jsonData = JSON.parse(jsonData);
         // console.log(jsonData);
         for (var i = 1; i <= 20; i++) {
-            console.log("начался цикл");
+            // console.log("начался цикл");
             var cssImg = "#img-" + i + "";
             var cssName = "#name-" + i + "";
             var cssKP = "#kp-rating-" + i + "";
