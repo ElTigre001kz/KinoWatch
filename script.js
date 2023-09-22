@@ -80,44 +80,44 @@
 
 
     // Функция для загрузки данных из Google Apps Script
-  //   function loadGoogleScriptData() {
-  //     var url = 'https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec'; // Замените на URL вашего сервиса скриптов
-  //     fetch(url)
-  //       .then(response => response.json())
-  //       .then(data => {
-  //         var jsonData = JSON.stringify(data, null, 2);
-  //         // document.getElementById('data').textContent = jsonData;
-	 // console.log("Данные получены: " + jsonData);
-  //       })
-  //       .catch(error => {
-  //         console.error("Ошибка загрузки данных: " + error);
-  //       });
-  //   }
+    function loadGoogleScriptData() {
+      var url = 'https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec'; // Замените на URL вашего сервиса скриптов
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          var jsonData = JSON.stringify(data, null, 2);
+          // document.getElementById('data').textContent = jsonData;
+	 console.log("Данные получены: " + jsonData);
+        })
+        .catch(error => {
+          console.error("Ошибка загрузки данных: " + error);
+        });
+    }
 
-  //   // Вызываем функцию при загрузке страницы
-  //   window.onload = loadGoogleScriptData;
+     // Вызываем функцию при загрузке страницы
+    window.onload = loadGoogleScriptData;
 
 const url = 'https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec';
 
 // Отправьте GET-запрос к указанному URL с помощью fetch
-fetch(url)
-  .then(response => {
-    // Проверьте, успешен ли запрос
-    if (response.ok) {
-      // Преобразуйте ответ в текст
-      return response.text();
-    } else {
-      throw new Error(`Ошибка ${response.status}: Не удалось получить страницу`);
-    }
-  })
-  .then(data => {
-    // Выведите данные HTML-страницы
-    console.log(data);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+// fetch(url)
+//   .then(response => {
+//     // Проверьте, успешен ли запрос
+//     if (response.ok) {
+//       // Преобразуйте ответ в текст
+//       return response.text();
+//     } else {
+//       throw new Error(`Ошибка ${response.status}: Не удалось получить страницу`);
+//     }
+//   })
+//   .then(data => {
+//     // Выведите данные HTML-страницы
+//     console.log(data);
+//   })
+//   .catch(error => {
+//     console.error(error);
+//   });
 
 // Пример использования
-window.onload = getDataFromGoogleScript();
+// window.onload = getDataFromGoogleScript;
 
