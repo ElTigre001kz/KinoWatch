@@ -80,21 +80,51 @@
 
 
     // Функция для загрузки данных из Google Apps Script
-    function loadGoogleScriptData() {
-      var url = 'https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec'; // Замените на URL вашего сервиса скриптов
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          var jsonData = JSON.stringify(data, null, 2);
-          // document.getElementById('data').textContent = jsonData;
-	 console.log("Данные получены: " + jsonData);
-        })
-        .catch(error => {
-          console.error("Ошибка загрузки данных: " + error);
-        });
+  //   function loadGoogleScriptData() {
+  //     var url = 'https://script.google.com/macros/s/AKfycbwALH5nSRNeazsRm4MF_kAYtRAHvZWUXY8siFkbqArjrrv610ttIzC7E1GhVQ4Lbp9GgA/exec'; // Замените на URL вашего сервиса скриптов
+  //     fetch(url)
+  //       .then(response => response.json())
+  //       .then(data => {
+  //         var jsonData = JSON.stringify(data, null, 2);
+  //         // document.getElementById('data').textContent = jsonData;
+	 // console.log("Данные получены: " + jsonData);
+  //       })
+  //       .catch(error => {
+  //         console.error("Ошибка загрузки данных: " + error);
+  //       });
+  //   }
+
+  //   // Вызываем функцию при загрузке страницы
+  //   window.onload = loadGoogleScriptData;
+
+function getDataFromGoogleScript() {
+  var scriptUrl = "https://script.google.com/macros/s/AKfycbx3Sgmg7jsOvSxT_vDGk77dxJr9Wmoi4NhjQN5CAgFPf-she4h8vJfWt5kDJEOu718o/exec";
+  
+  // Формируем URL для GET-запроса с данными
+  var data = { /* ваш объект данных */ };
+  var queryParams = Object.keys(data).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
+  var getUrl = scriptUrl + "?" + queryParams;
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", getUrl, true);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+        // Обработка успешного ответа от сервера
+        var response = xhr.responseText;
+        // Далее обрабатывайте ответ по вашим нуждам
+        console.log(response);
+      } else {
+        // Обработка ошибки
+        console.error("Произошла ошибка при получении данных:", xhr.status, xhr.statusText);
+      }
     }
+  };
 
-    // Вызываем функцию при загрузке страницы
-    window.onload = loadGoogleScriptData;
+  xhr.send();
+}
 
+// Пример использования
+window.onload = getDataFromGoogleScript();
 
