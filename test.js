@@ -16,7 +16,7 @@
             var cssUrl = "#url-" + i + "";
             var dataKey = "data" + i;
             var data = jsonData[dataKey];
-             console.log(jsonData);
+             // console.log(jsonData);
 
             if (data) {
                 // console.log("залетел в иф дата");
