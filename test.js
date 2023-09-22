@@ -1,5 +1,6 @@
 (function () {
     function insertDataWithCSSSelectorsAndLoop(jsonData) {
+        console.log("Функция запустилась");
         for (var i = 1; i <= 20; i++) {
             var cssImg = "#img-" + i + "";
             var cssName = "#name-" + i + "";
@@ -54,7 +55,7 @@
                     console.log("Данные получены: " + jsonData);
 
                     // Вызываем функцию insertDataWithCSSSelectorsAndLoop с данными jsonData
-                    insertDataWithCSSSelectorsAndLoop(data);
+                    insertDataWithCSSSelectorsAndLoop(jsonData);
                 })
                 .catch(error => {
                     console.error("Ошибка загрузки данных: " + error);
