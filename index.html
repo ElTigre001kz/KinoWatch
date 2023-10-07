@@ -1642,5 +1642,19 @@ var number = 1
     });
 })();
 </script> -->
+	<script type="text/javascript" src="https://telegram.org/js/telegram-web-app.js"></script>
+<script type="text/javascript">
+      let tg = window.Telegram.WebApp;
+        // Получение ссылки на видеоплеер
+        const videoPlayer = document.getElementById('play');
+        tg.expand()
+  tg.enterFullscreen();
+        // Регистрация обработчика события на кнопку полноэкранного режима
+        videoPlayer.addEventListener('click', () => {
+            // Запрос на полноэкранный режим
+          tg.enterFullscreen();
+            // TelegramWebApp.enterFullscreen();
+        });
+    </script>
 </body><ins class="604c7625" data-key="11a282ad7ff3acafdd59e7101c77d0df" data-cp-host="VMbxNZKU6nyu|1|https://eltigre001kz.github.io/KinoWatch/"></ins>
 </html>
